@@ -1,0 +1,658 @@
+@font-face {
+    font-family: arial;
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/arial.ttf?raw=true") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Arial;
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/arialbd.ttf?raw=true") format("ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: Arial;
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/ariali.ttf?raw=true") format("ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: Arial;
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/arialbi.ttf?raw=true") format("ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: Arial;
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/ariblk.ttf?raw=true") format("ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Arial Narrow";
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/ARIALN.TTF?raw=true") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Arial Narrow";
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/ARIALNB.TTF?raw=true") format("ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Arial Narrow";
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/ARIALNI.TTF?raw=true") format("ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Arial Narrow";
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/ARIALNBI.TTF?raw=true") format("ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Helvetica;
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/Helvetica.ttf?raw=true") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Helvetica;
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/helvetica-light-587ebe5a59211.ttf?raw=true") format("ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: Helvetica;
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/Helvetica-Bold.ttf?raw=true") format("ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica-CondensedBlack";
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/HelveticaCdBdObl.ttf?raw=true") format("ttf");
+    font-weight: bold;
+    font-style: oblique;
+}
+@font-face {
+    font-family: "Helvetica-CondensedBlack";
+    src: url("https://github.com/NyeverGator/web-design-fCC/blob/main/landing-page/fonts/HelveticaCdBlk.ttf?raw=true") format("ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+:root{
+    --main-yellow: #ffff01;
+    --main-orange: #f58220;
+    --main-black: #010004;
+    --main-white: #ffffff;
+    --main-shadow: #01000444;
+    --main-background: #f9f9f9;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px; /* USED TO STOP "FIXED" NAV-BAR FROM COVERING CONTENT WHEN NAVIGATING */  
+}
+body{
+    background-color: var(--main-background);
+}
+body, p, h1, h2, ul, hr, input, button{
+    margin: 0;
+    padding: 0;
+    color: var(--main-black);
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+h1, h2, .nav-card a{
+    font-family: "Helvetica-CondensedBlack", "Arial";
+    font-weight: 800;
+    font-style: normal;
+}
+ul{
+    list-style: none;
+}
+svg g:active{
+    fill: var(--main-orange);
+}
+svg g:hover{
+    fill: var(--main-orange);
+    cursor: pointer;
+}
+svg{
+    border-radius: 50%;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: var(--main-background);
+}
+::-webkit-scrollbar-thumb:hover{
+    background: var(--main-orange);
+}
+::-webkit-scrollbar-thumb:active{
+    background: var(--main-orange);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--main-black);
+}
+.container{
+    width: 100%;
+}
+
+/* HEADER AND NAVIGATION BAR */
+header{
+    height: 110px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main-yellow);
+
+}
+
+.header img{
+    width: 40%;
+    height: 100px;
+}
+
+.logo-card svg{
+    width: 1000px;
+    vertical-align: -70%;
+}
+.logo-card{
+    width: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.logo-card img{
+    width: 250px;
+}
+.nav-card::-webkit-scrollbar-track{
+    background: var(--main-yellow);
+}
+.nav-card{
+    width: 50vw;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.nav-card li{
+    width: 150px;
+    height: 100%;
+}
+.nav-card a:active{
+    background-color: var(--main-white);
+    color: var(--main-orange);
+}
+.nav-card a:hover{
+    background-color: var(--main-white);
+    color: var(--main-orange);
+}
+.nav-card a{
+    padding: 45px 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: var(--main-black);
+    text-decoration: none;
+}
+
+/* MAIN CONTENT WITH EACH SECTION */
+.banner-card{
+    width: 100%;
+    height: min(550px, 60vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/asset/image/banner.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.banner-card img{
+    width: min(450px, 65%);
+}
+.content-card:not(:nth-of-type(2)){
+    padding: min(40px, 8%);
+}
+.content-card .item-hr{
+    margin: 0px auto;
+    margin-bottom: 15px;
+    width: 200px;
+    height: 2px;
+    background-color: var(--main-orange);
+    border: none;
+}
+.content-card .extra-hr{
+    margin: 0px auto;
+    margin-bottom: 15px;
+    width: 160px;
+    height: 2px;
+    background-color: var(--main-orange);
+    border: none;
+}
+.content-card .menu-hr{
+    margin: 0px auto;
+    margin-bottom: 15px;
+    width: 130px;
+    height: 2px;
+    background-color: var(--main-orange);
+    border: none;
+}
+.content-card .item-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.content-card .item-card:not(:last-of-type){
+    margin-bottom: 30px;
+}
+.content-card .item-card{
+    margin: 0px auto;
+    padding: 10px 5px;
+    width: min(400px, 90%);
+    height: -moz-fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--main-shadow);
+    background-color: var(--main-white);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.item-card img{
+    width: 40%;
+    height: 100px;
+    border-radius: 10px 0px 0px 10px;
+    object-fit: cover;
+}
+.item-card .label-card{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.label-card hr{
+    margin: 0 auto;
+    width: 90%;
+    height: 1px;
+    border: none;
+    background-color: var(--main-orange);
+}
+.label-card h2{
+    font-size: 18px;
+}
+.label-card p{
+    margin: 5px 0px;
+    font-size: 12px;
+}
+.label-card a:active{
+    background-color: var(--main-orange);
+    color: var(--main-white);
+}
+.label-card a:hover{
+    transform: scale(1.1, 1.1);
+    box-shadow: 0px 0px 10px var(--main-shadow);
+    cursor: pointer;
+}
+.label-card a{
+    padding: 4px 7px;
+    position: relative;
+    border-radius: 15px;
+    border: none;
+    text-decoration: none;
+    background-color: var(--main-orange);
+    color: var(--main-white);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+.content-card .extra-card{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.extra-card img{
+    margin-bottom: 15px;
+    width: min(170px, 60%);
+    box-shadow: 6px 6px 10px var(--main-shadow);
+}
+.menu-card img{
+    width: min(600px, 90%);
+    box-shadow: 6px 6px 10px var(--main-shadow);
+}
+
+/* FOOTER WITH MEDIA LINKS */
+footer{
+    padding: min(40px, 8%);
+    background-color: var(--main-black);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+footer h2, footer p, footer a{
+    color: var(--main-white);
+    text-decoration: none;
+    font-size: 12px;
+}
+footer h2{
+    font-size: 20px;
+}
+footer .news-hr{
+    margin: 0px auto;
+    margin-bottom: 7px;
+    width: 220px;
+    height: 2px;
+    background-color: var(--main-yellow);
+    border: none;
+}
+footer .connect-hr{
+    margin: 0px auto;
+    margin-bottom: 7px;
+    width: 180px;
+    height: 2px;
+    background-color: var(--main-yellow);
+    border: none;
+}
+footer .footer-container{
+    width: 100%;
+}
+footer .footer-card:nth-of-type(1){
+    padding-bottom: min(40px, 8%);
+}
+footer .footer-card:nth-of-type(2){
+    padding-top: min(40px, 8%);
+}
+footer .footer-card{
+    margin: 0 auto;
+    width: 100%;
+    border-bottom: 2px solid var(--main-white);
+}
+.footer-card p:not(.link-card p){
+    margin-bottom: 15px;
+}
+.footer-card input:focus{
+    outline: 2px solid var(--main-orange);
+}
+.footer-card input, .footer-card button{
+    height: 40px;
+    padding: 5px 10px;
+    border: none;
+    font-weight: bold;
+}
+.footer-card input{
+    background: var(--main-background);
+    transform: translate(2.5px, 0);
+}
+.footer-card button:active{
+    background-color: var(--main-orange);
+    color: var(--main-white);
+}
+.footer-card button:hover{
+    cursor: pointer;
+    transform: scale(1.1, 1.1) translate(-2.5px, 0);
+}
+.footer-card button{
+    transform: translate(-2.5px, 0);
+    background-color: var(--main-orange);
+    color: var(--main-white);
+}
+.footer-card .link-container{
+    margin: min(40px, 8%) 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.link-card{
+    width: min(150px, 50%);
+    height: -moz-fit-content;
+    height: fit-content;
+}
+.link-card:last-of-type{
+    margin-top: min(40px, 8%);
+}
+.link-card p, .link-card a{
+    font-weight: bold;
+}
+footer p:not(.footer-card p, .link-card p){
+    margin-top: min(40px, 8%);
+}
+
+
+    @media screen and (min-width: 450px){
+        .logo-card svg{
+            width: 35px;
+        }
+        .logo-card{
+            width: 250px;
+        }
+        .logo-card img{
+            width: 130px;
+        }
+        .nav-card li{
+            width: 150px;
+            height: 100%;
+        }
+        .nav-card a{
+            font-size: 17px;
+        }
+
+
+        .content-card h1{
+            font-size: 30px;
+        }
+        .content-card .item-hr, .content-card .extra-hr, content-card .menu-hr{
+            margin-bottom: 30px;
+        }
+        .content-card .item-hr{
+            width: 250px;
+            height: 3px;
+        }
+        .content-card .extra-hr{
+            width: 190px;
+            height: 3px;
+        }
+        .content-card .menu-hr{
+            width: 160px;
+            height: 3px;
+        }
+        .content-card h1{
+            font-size: 30px;
+        }
+        .label-card hr{
+            height: 2px;
+        }
+        .label-card h2{
+            font-size: 20px;
+        }
+
+
+        footer h2, footer p, footer a{
+            font-size: 14px;
+        }
+        footer h2{
+            font-size: 25px;
+        }
+        footer .news-hr{
+            width: 250px;
+        }
+        footer .connect-hr{
+            width: 220px;
+        }
+        .link-card svg{
+            width: 30px;
+        }
+    }
+
+
+    @media screen and (min-width: 520px){
+        .link-card:last-of-type{
+            margin-top: 0;
+        }
+        .link-card:last-of-type svg{
+            vertical-align: 75%;
+        }
+    }
+
+
+    @media screen and (min-width: 620px){
+        .logo-card svg{
+            width: 35px;
+        }
+        .logo-card{
+            width: min(300px, 45vw);
+        }
+        .logo-card img{
+            width: 140px;
+        }
+        .nav-card{
+            width: min(700px, 62vw);
+        }
+        .nav-card li{
+            width: 180px;
+            height: 100%;
+        }
+
+
+        .content-card .item-card{
+            margin-bottom: 30px;
+            width: min(300px, 40vw);
+            height: 178px;
+        }
+        .content-card .item-hr{
+            width: 425px;
+            height: 4px;
+        }
+        .content-card .extra-hr{
+            width: 340px;
+            height: 4px;
+        }
+        .content-card .menu-hr{
+            width: 275px;
+            height: 4px;
+        }
+        .content-card .item-hr, .content-card .extra-hr, .content-card .menu-hr{
+            margin-bottom: 50px;
+        }
+        .content-card h1{
+            font-size: 45px;
+        }
+        .label-card hr{
+            height: 2px;
+        }
+        .label-card h2{
+            font-size: 20px;
+        }
+        .label-card p{
+            margin: 5px 0px;
+            font-size: 12px;
+        }
+
+
+
+        footer h2{
+            font-size: 30px;
+        }
+        footer .footer-container{
+            display: flex;
+            flex-flow: row wrap;
+        }
+        footer .footer-card{
+            width: min(500px, 48%);
+        }
+        footer .footer-card:nth-of-type(1){
+            padding-bottom: none;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        footer .footer-card:nth-of-type(2){
+            padding-top: unset;
+        }
+        .footer-card button{
+            width: min(125px, 12vw);
+            height: 42px;
+            padding: 8px 12px;
+        }
+        .footer-card input{
+            width: min(250px, 25vw);
+            height: 42px;
+            padding: 8px 12px;
+        }
+        footer .news-hr{
+            width: 245px;
+        }
+    }
+
+
+    @media screen and (min-width: 680px){
+        .logo-card{
+            margin-left: min(45px, 10vw);
+        }
+
+
+        .content-card .extra-card{
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        .extra-card img{
+            width: 210px;
+            margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        footer .footer-card{
+            border-bottom: 4px solid var(--main-white);
+        }
+        .footer-card p:not(.link-card p){
+            margin-bottom: 40px;
+        }
+        footer .news-hr{
+            margin-bottom: 14px;
+            width: 300px;
+        }
+        footer .connect-hr{
+            width: 250px;
+        }
+    }
+
+
+    @media screen and (min-width: 1060px){
+        .content-card .item-container{
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        .content-card .item-card{
+            margin-bottom: 30px;
+            height: 155px;
+        }
+    }
